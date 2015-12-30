@@ -1,0 +1,42 @@
+{{> header activeNav=this.title}}
+	<div class="grid">
+		<h2 class="col-1-1">{{this.title}}</h2>
+		<p class="col-1-1">
+			We'd love to hear what you have to say! Fill out the form below and we'll contact you ASAP! If you'd like to email us directly you can reach us at <a href="mailto:hello@eastoh.co">hello@eastoh.co</a>
+		</p>
+		<div class="col-1-1">
+			<div class="flash-message"></div>
+		</div>
+		<form id="js-contact-form" action="http://formspree.io/hello@eastoh.co" method="POST">
+			<div class="col-6-12">
+				<input type="text" name="first_name" id="first_name" class="title" placeholder="First Name:">
+			</div>
+			<div class="col-6-12">
+				<input type="text" name="last_name" id="last_name" class="title" placeholder="Last Name:">
+			</div>
+			<div class="col-6-12">
+				<input type="text" name="email" id="email" class="email" placeholder="Email Address:">
+			</div>
+			<div class="col-6-12">
+				<div class="select">
+					<select name="reason" id="reason">
+						<option value="" disabled="disabled" selected="selected">Reason for contacting us?</option>
+						<option value="Site Bug">Bug found</option>
+						<option value="Feedback">Site Feedback</option>
+						<option value="Freelance">We'd like to work with you!</option>
+					</select>
+					<i class="fa fa-chevron-down"></i>
+				</div>
+			</div>
+			<div class="col-1-1">
+				<textarea name="body" id="body" placeholder="Message:" class="email-body"></textarea>
+			</div>
+			<div class="col-1-1">
+				<button type="submit" class="form-button" id="js-publish">
+					<i class="fa fa-paper-plane"></i>
+					Send Message
+				</button>
+			</div>
+		</form>
+	</div>
+{{> footer}}
