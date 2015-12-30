@@ -27,7 +27,7 @@ node build
 cd build
 touch CNAME
 chmod +x CNAME
-echo eastoh.co > CNAME
+echo www.eastoh.co > CNAME
 rm -rf .git/
 git init
 git remote add origin $GITURL
