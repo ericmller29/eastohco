@@ -5,7 +5,7 @@
   "main": "build.js",
   "scripts": {
     "deploy": "sudo ./deploy.sh",
-    "serve": "mode=dev node build"
+    "serve": "sudo mode=dev node build"
   },
   "author": "Eric Miller",
   "license": "ISC",
@@ -14,6 +14,7 @@
     "metalsmith": "^2.1.0",
     "metalsmith-collections": "^0.7.0",
     "metalsmith-date-formatter": "^1.0.2",
+    "metalsmith-drafts": "0.0.1",
     "metalsmith-markdown": "^0.2.1",
     "metalsmith-navigation": "^0.2.5",
     "metalsmith-permalinks": "^0.4.1",

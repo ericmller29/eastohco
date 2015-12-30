@@ -9,14 +9,15 @@ var Metalsmith  = require('metalsmith'),
     serve = require('metalsmith-serve'),
     dateFormatter = require('metalsmith-date-formatter'),
     sass = require('metalsmith-sass'),
-    env = process.env.mode;
+    env = process.env.mode,
+    drafts = require('metalsmith-drafts');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbs').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString());
 Handlebars.registerHelper('excerpt', function(body){
     var excerpt = body.split('\n');
 
-    return excerpt[0] + '...';
+    return excerpt[0].replace('<p>', '').replace('</p>', '') + '...';
 });
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b) // Or === depending on your needs
@@ -47,6 +48,7 @@ var metalsmith = Metalsmith(__dirname)
 		file: 'screen.css',
 		outputDir: 'css/'
 	}))
+    .use(drafts())
     .use(markdown())
     .use(permalinks({
       	linksets: [
