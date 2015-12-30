@@ -1,0 +1,19 @@
+blockquote{
+	display: block;
+	padding: 5px 15px;
+	border-left: solid 3px #aaa;
+	background: #fff;
+	font-style: italic;
+}
+table{
+	width: 100%;
+}
+table thead th{
+	text-align: left;
+}
+table caption{
+	font-style: italic;
+	padding-bottom: 10px;
+	border-bottom: solid 1px #ddd;
+	margin-bottom: 10px;
+}
