@@ -4,7 +4,8 @@
   "description": "East oh dot co official site",
   "main": "build.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "deploy": "sudo ./deploy.sh",
+    "serve": "mode=dev node build"
   },
   "author": "Eric Miller",
   "license": "ISC",

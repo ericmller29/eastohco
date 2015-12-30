@@ -8,7 +8,8 @@ var Metalsmith  = require('metalsmith'),
     watch = require('metalsmith-watch'),
     serve = require('metalsmith-serve'),
     dateFormatter = require('metalsmith-date-formatter'),
-    sass = require('metalsmith-sass');
+    sass = require('metalsmith-sass'),
+    env = process.env.mode;
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbs').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString());
@@ -24,7 +25,7 @@ Handlebars.registerHelper('if_eq', function(a, b, opts) {
         return opts.inverse(this);
 });
 
-Metalsmith(__dirname)
+var metalsmith = Metalsmith(__dirname)
 	.use(collections({
 		pages: {
 			pattern: 'content/pages/*.md'
@@ -62,8 +63,10 @@ Metalsmith(__dirname)
     .use(templates({
     	engine: 'handlebars',
     	directory: './templates'
-    }))
-    .use(
+    }));
+    
+if(env === 'dev'){
+    metalsmith.use(
     	watch({
     		paths: {
     			"${source}/**/*": true,
@@ -74,8 +77,10 @@ Metalsmith(__dirname)
     )
 	.use(serve({
 		port: 1234
-	}))
-    .destination('./build')
+	}));
+}
+
+metalsmith.destination('./build')
     .build(function(err, files) {
         if (err) { console.log(err) }
     });
