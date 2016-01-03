@@ -1,7 +1,21 @@
 {{> header}}
 	<div class="grid">
-		<h2 class="col-1-1">{{ title }}</h2>
-		{{{contents}}}
+		<article class="post col-1-1">
+			<div class="meta">
+				<span class="meta__item">
+					<em>on</em> {{ publishedDate }}
+				</span>
+				<span class="meta__item">
+					<em>by</em> <a href="#">{{ author }}</a>
+				</span>
+			</div>
+			<h2 class="post__title">
+				{{ title }}
+			</h2>
+			<div class="post__body">
+				{{{contents}}}
+			</div>
+		</article>
 		<div id="disqus_thread" class="col-1-1 comments"></div>
 	</div>
 	<script>

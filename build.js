@@ -32,7 +32,9 @@ var metalsmith = Metalsmith(__dirname)
 			pattern: 'content/pages/*.md'
 		},
 		posts: {
-			pattern: 'content/posts/*.md'
+			pattern: 'content/posts/*.md',
+            sortBy: 'publishedDate',
+            reverse: true
 		},
         navItems: {
             sortBy: 'navOrder'
@@ -58,7 +60,7 @@ var metalsmith = Metalsmith(__dirname)
       		},
       		{
       			match: { collection: 'posts' },
-      			pattern: 'posts/:title'
+      			pattern: 'blog/:title'
       		}
       	]
     }))
