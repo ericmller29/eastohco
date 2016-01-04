@@ -3,6 +3,8 @@ title: Regex for all your needs
 publishedDate: 2015-07-27
 author: Eric Miller
 template: post.hbs
+keywords: EastOh.co, East Oh Co, East Oh, Contactr.io, Regex, AngularJS
+description: I like you don't have regex memorized or really even learned. It's a hard concept to grasp, and if you're anything like me you always, always, always end up looking up stackoverflow posts for the correct one to use.
 ---
 I like you don't have regex memorized or really even learned. It's a hard concept to grasp, and if you're anything like me you always, always, always end up looking up stackoverflow posts for the correct one to use. I just recently found [this post](http://www.geekgumbo.com/2013/03/16/regular-expression-quick-look-up/) listing a bunch of really useful expressions. 
 

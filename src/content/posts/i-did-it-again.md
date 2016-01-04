@@ -3,6 +3,8 @@ title: I did it again
 publishedDate: 2015-12-30
 author: Eric Miller
 template: post.hbs
+keywords: EastOh.co, East Oh Co, East Oh, Metalsmith, web, development, static, site, generator, new, year
+description: I think the title sums up my approach to personal web development. I recently moved this site off of the custom cms type thing I had going with MeteorJS to a static site generator called [Metalsmith](http://www.metalsmith.io/). It does the same as most static site generators, I just liked this one because I could build my own process similar to a gulp file.
 ---
 
 I think the title sums up my approach to personal web development. I recently moved this site off of the custom cms type thing I had going with MeteorJS to a static site generator called [Metalsmith](http://www.metalsmith.io/). It does the same as most static site generators, I just liked this one because I could build my own process similar to a gulp file.
