@@ -31,6 +31,9 @@ var metalsmith = Metalsmith(__dirname)
 		pages: {
 			pattern: 'content/pages/*.md'
 		},
+        projects: {
+            pattern: 'content/projects/*.md'
+        },
 		posts: {
 			pattern: 'content/posts/*.md',
             sortBy: 'publishedDate',

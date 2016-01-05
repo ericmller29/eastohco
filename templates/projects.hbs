@@ -1,0 +1,22 @@
+{{> header activeNav=this.title}}
+	<div class="grid">
+		<h2 class="col-1-1">{{ title }}</h2>
+		<div class="projects">
+			{{#each projects}}
+			<div class="col-4-12 mobile-col-1-1">
+				<div class="project">
+					<div class="img">
+						<img src="{{this.logo}}" alt="contactr.io logo" title="contactr.io logo">
+					</div>
+					<h2>{{this.title}}</h2>
+					<p class="desc">{{{this.contents}}}</p>
+					<a href="{{this.url}}" target="_blank" class="form-button">
+						<i class="fa fa-eye"></i>
+						Check it out
+					</a>
+				</div>
+			</div>
+			{{/each}}
+		</div>
+	</div>
+{{> footer }}

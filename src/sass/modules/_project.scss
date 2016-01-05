@@ -1,0 +1,22 @@
+.project{
+	display: block;
+	text-align: center;
+	width: 100%;
+	padding: 20px;
+	background: #eee;
+	h2{
+		margin: 0;
+	}
+	.img{
+		width: 125px;
+		margin: 0 auto 10px;
+
+		img{
+			width: 100%;
+		}
+	}
+	.form-button{
+		display: inline-block;
+		text-decoration: none;
+	}
+}
