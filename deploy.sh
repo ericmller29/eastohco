@@ -35,5 +35,5 @@ rm -rf .git/
 git init
 git remote add origin $GITURL
 git add .
-git commit -am "deploy"
+git commit -am "Deploying - $now"
 git push origin master:gh-pages --force

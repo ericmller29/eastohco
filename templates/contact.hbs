@@ -7,7 +7,8 @@
 		<div class="col-1-1">
 			<div class="flash-message"></div>
 		</div>
-		<form id="js-contact-form" action="https://contactr.io/FT5yLEkLmpbyhRHn45OVxKIqZ2Tfn1z8efI5F6YOZCOFE0DHHF" method="POST">
+		{{!-- <form id="js-contact-form" action="https://contactr.io/FT5yLEkLmpbyhRHn45OVxKIqZ2Tfn1z8efI5F6YOZCOFE0DHHF" method="POST"> --}}
+		<form id="js-contact-form" action="http://localhost:8000/apkAJD7qegUTlJeUCJDSy1T5Y1laGZVmLb0Uxjbbx8e7hru6zQ" method="POST">
 			<div class="col-6-12">
 				<input type="text" name="first_name" id="first_name" class="title" placeholder="First Name:">
 			</div>
@@ -41,6 +42,7 @@
 				</button>
 			</div>
 			<input type="text" name="_human" style="display: none;">
+			<input type="text" name="_required" style="display: none;" value="first_name, last_name, email, reason, body">
 		</form>
 	</div>
 {{> footer}}
