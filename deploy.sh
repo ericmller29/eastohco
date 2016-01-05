@@ -22,6 +22,9 @@
 
 set -e
 GITURL=`git config remote.origin.url`
+git add --all
+git commit -m"Deploying"
+git push
 npm install
 node build
 cd build
