@@ -19,12 +19,11 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 ###############################################################################
-now="$(date +'%d/%m/%Y')"
-printf "Current date in dd/mm/yyyy format %s\n" "$now"
+now="$(date +'%Y/%m/%d')"
 set -e
 GITURL=`git config remote.origin.url`
 git add --all
-git commit -m"Deploying - "
+git commit -m"Deploying - $now"
 git push
 npm install
 node build
