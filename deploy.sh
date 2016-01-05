@@ -20,7 +20,7 @@
 # THE SOFTWARE.
 ###############################################################################
 now="$(date +'%d/%m/%Y')"
-echo now
+printf "Current date in dd/mm/yyyy format %s\n" "$now"
 set -e
 GITURL=`git config remote.origin.url`
 git add --all
