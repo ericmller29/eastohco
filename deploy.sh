@@ -19,7 +19,7 @@
 # OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 # THE SOFTWARE.
 ###############################################################################
-echo date +'%m/%d/%Y'
+echo $(date)
 set -e
 GITURL=`git config remote.origin.url`
 git add --all
