@@ -10,15 +10,12 @@ var Metalsmith  = require('metalsmith'),
     dateFormatter = require('metalsmith-date-formatter'),
     sass = require('metalsmith-sass'),
     env = process.env.mode,
-    drafts = require('metalsmith-drafts');
+    drafts = require('metalsmith-drafts'),
+    excerpts = require('metalsmith-excerpts');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbs').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString());
-Handlebars.registerHelper('excerpt', function(body){
-    var excerpt = body.split('\n');
 
-    return excerpt[0].replace('<p>', '').replace('</p>', '') + '...';
-});
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
     if(a == b) // Or === depending on your needs
         return opts.fn(this);
@@ -55,6 +52,7 @@ var metalsmith = Metalsmith(__dirname)
 	}))
     .use(drafts())
     .use(markdown())
+    .use(excerpts())
     .use(permalinks({
       	linksets: [
       		{
@@ -73,15 +71,7 @@ var metalsmith = Metalsmith(__dirname)
     }));
     
 if(env === 'dev'){
-    metalsmith.use(
-    	watch({
-    		paths: {
-    			"${source}/**/*": true,
-    			"templates/**/*": "**/*.hbs"
-    		},
-    		livereload: true
-    	})
-    )
+    metalsmith
 	.use(serve({
 		port: 1234
 	}));
