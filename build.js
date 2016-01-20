@@ -11,7 +11,8 @@ var Metalsmith  = require('metalsmith'),
     sass = require('metalsmith-sass'),
     env = process.env.mode,
     drafts = require('metalsmith-drafts'),
-    excerpts = require('metalsmith-excerpts');
+    excerpts = require('metalsmith-excerpts'),
+    sitemap = require('metalsmith-sitemap');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbs').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString());
@@ -68,6 +69,9 @@ var metalsmith = Metalsmith(__dirname)
     .use(templates({
     	engine: 'handlebars',
     	directory: './templates'
+    }))
+    .use(sitemap({
+        hostname: 'http://www.eastoh.co'
     }));
     
 if(env === 'dev'){
