@@ -1,28 +1,8 @@
 {{> header activeNav=this.title}}
-    <div class="grid">
-    	{{#each posts}}
-			<article class="post col-1-1">
-				<div class="meta">
-					<span class="meta__item">
-						<em>on</em> {{ this.publishedDate }}
-					</span>
-					<span class="meta__item">
-						<em>by</em> <a href="#">{{ this.author }}</a>
-					</span>
-				</div>
-				<h2 class="post__title">
-					<a href="{{this.path}}">{{ this.title }}</a>
-				</h2>
-				<div class="post__body">
-					{{{ this.excerpt }}}
-				</div>
-				<div class="post__buttons">
-					<a href="{{this.path}}" class="button">
-						Read More
-						<i class="fa fa-angle-right"></i>
-					</a>
-				</div>
-			</article>
-    	{{/each}}
-    </div>
+	<section>
+		{{> projects}}
+	</section>
+	<section class="alternate">
+		<h2>Contact Me</h2>
+	</section>
 {{> footer}}

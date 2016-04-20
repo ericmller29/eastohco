@@ -1,0 +1,22 @@
+.button{
+	display: inline-block;
+	padding: 10px 15px;
+	background: #222;
+	text-decoration: none;
+	border-radius: 2px;
+	font-weight: bold;
+	text-transform: uppercase;
+	color: #f1f1f1;
+	transition: all 0.4s;
+	font-family: 'Montserrat', sans-serif;
+
+	&:hover{
+		background: $mainColor;
+		color: #222;
+	}
+
+	i{
+		margin-right: 5px;
+		position: relative;
+	}
+}

@@ -3,7 +3,7 @@
 	text-align: center;
 	width: 100%;
 	padding: 20px;
-	background: #eee;
+	background: #f1f1f1;
 	h2{
 		margin: 0 0 30px 0;
 		position: relative;
@@ -13,7 +13,7 @@
 			content: '';
 			height: 4px;
 			width: 60%;
-			background: #fec240;
+			background: $mainColor;
 			position: absolute;
 			left: 0;
 			bottom: -5px;

@@ -1,8 +1,15 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
+$mainColor: #fec240;
 
 @import "main";
 @import "grid";
-@import "elements";
+
+@import "modules/container";
+@import "modules/logo";
+@import "modules/social";
+@import "modules/sections";
 
 @import "modules/projects";
 @import "modules/project";
+
+@import "modules/button";

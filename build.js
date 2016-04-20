@@ -15,6 +15,7 @@ var Metalsmith  = require('metalsmith'),
     sitemap = require('metalsmith-sitemap');
 
 Handlebars.registerPartial('header', fs.readFileSync(__dirname + '/templates/partials/header.hbs').toString());
+Handlebars.registerPartial('projects', fs.readFileSync(__dirname + '/templates/partials/projects.hbs').toString());
 Handlebars.registerPartial('footer', fs.readFileSync(__dirname + '/templates/partials/footer.hbs').toString());
 
 Handlebars.registerHelper('if_eq', function(a, b, opts) {
