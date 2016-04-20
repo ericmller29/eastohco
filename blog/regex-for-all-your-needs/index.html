@@ -1,0 +1,118 @@
+<head>
+    <title>Regex for all your needs - East Oh dot Co</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="canonical" href="http://www.eastoh.co" />
+
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="East Oh dot Co Web Blog" />
+    <meta property="og:description" content="JavaScript, jQuery, Angular, React, CSS, PHP" />
+    <meta property="og:url" content="http://www.eastoh.co" />
+    <meta property="og:site_name" content="East Oh dot Co Web Blog" />
+    <meta property="og:image" content="http://www.eastoh.co/img/logo.png" />
+    <meta name="twitter:card" content="summary_large_image"/>
+    <meta name="twitter:description" content="JavaScript, jQuery, Angular, React, CSS, PHP"/>
+    <meta name="twitter:title" content="East Oh dot Co - Web Development"/>
+    <meta name="twitter:site" content="@eastohco"/>
+    <meta name="twitter:image" content="http://www.eastoh.co/img/logo.png"/>
+
+    <meta name="description" content="I like you don&#x27;t have regex memorized or really even learned. It&#x27;s a hard concept to grasp, and if you&#x27;re anything like me you always, always, always end up looking up stackoverflow posts for the correct one to use.">
+    <meta name="keywords" content="EastOh.co, East Oh Co, East Oh, Contactr.io, Regex, AngularJS">
+    <meta name="author" content="Eric Miller">
+    
+    <!-- <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800|Roboto+Slab:400,100,300,700"> -->
+    <link href='https://fonts.googleapis.com/css?family=Montserrat:400,700|Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/css/screen.css">
+
+    <link rel="icon" type="image/png" href="/img/favicon-32x32.png?v=2" sizes="32x32" />
+    <link rel="icon" type="image/png" href="/img/favicon-16x16.png?v=2" sizes="16x16" />
+</head>
+<body>
+
+    <div class="container">
+        <div class="logo">
+            <a href="/" alt="Homepage" title="Homepage"><img src="/img/logo.svg"></a>
+            <nav class="social">
+                <a href="https://twitter.com/_ericmiller" target="_blank" alt="Follow me @_ericmiller">
+                    <i class="fa fa-twitter"></i>
+                </a>
+                <a href="https://github.com/ericmller29" target="_blank" alt="I'm on github at ericmller29">
+                    <i class="fa fa-github"></i>
+                </a>
+                <a href="http://codepen.io/_ericmiller/" target="_blank" alt="I'm on codepen @_ericmiller">
+                    <i class="fa fa-codepen"></i>
+                </a>
+            </nav>
+        </div>	<div class="grid">
+		<article class="post col-1-1">
+			<div class="meta">
+				<span class="meta__item">
+					<em>on</em> July 27, 2015
+				</span>
+				<span class="meta__item">
+					<em>by</em> <a href="#">Eric Miller</a>
+				</span>
+			</div>
+			<h2 class="post__title">
+				Regex for all your needs
+			</h2>
+			<div class="post__body">
+				<p>I like you don&#39;t have regex memorized or really even learned. It&#39;s a hard concept to grasp, and if you&#39;re anything like me you always, always, always end up looking up stackoverflow posts for the correct one to use. I just recently found <a href="http://www.geekgumbo.com/2013/03/16/regular-expression-quick-look-up/">this post</a> listing a bunch of really useful expressions. </p>
+<p>To save myself the headache I&#39;m going to also post some here that I use frequently with an AngularJS example.</p>
+<p>Enjoy.</p>
+<h4 id="email">Email</h4>
+<p>This is probably the least accurate one on the list. To truly validate an email address you&#39;d have to go through much more trouble. This expression basically just checks that they have a string, then @, then another string, then &#39;.&#39;, then another string.</p>
+<pre><code class="lang-js">var pattern = /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/;
+</code></pre>
+<iframe height='268' scrolling='no' src='//codepen.io/_ericmiller/embed/WvYNyg/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;margin-top:20px;'>See the Pen <a href='http://codepen.io/_ericmiller/pen/WvYNyg/'>Email Address</a> by Eric (<a href='http://codepen.io/_ericmiller'>@_ericmiller</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+<h4 id="secure-password-ex-thisismy1password-">Secure Password ex: Thisismy1password!</h4>
+<pre><code class="lang-js">var pattern = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[$@$!%*?&amp;])[A-Za-z\d$@$!%*?&amp;]{8,}/;
+</code></pre>
+<iframe height='268' scrolling='no' src='//codepen.io/_ericmiller/embed/aOQbYO/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;margin-top:20px;'>See the Pen <a href='http://codepen.io/_ericmiller/pen/aOQbYO/'>Secure Password</a> by Eric (<a href='http://codepen.io/_ericmiller'>@_ericmiller</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+<h4 id="us-zip-code">US Zip Code</h4>
+<pre><code class="lang-js">var pattern = /^[0-9]{5}(?:-[0-9]{4})?$/;
+</code></pre>
+<iframe height='268' scrolling='no' src='//codepen.io/_ericmiller/embed/GJwRZr/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;margin-top:20px;'>See the Pen <a href='http://codepen.io/_ericmiller/pen/GJwRZr/'>Regex US ZipCode</a> by Eric (<a href='http://codepen.io/_ericmiller'>@_ericmiller</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+<h4 id="us-phone-number-ex-123-123-1234">US Phone Number ex: (123) 123-1234</h4>
+<pre><code class="lang-js">var pattern = /^(\([0-9]{3}\) |[0-9]{3}-)[0-9]{3}-[0-9]{4}$/;
+</code></pre>
+<iframe height='268' scrolling='no' src='//codepen.io/_ericmiller/embed/PqxoJJ/?height=268&theme-id=0&default-tab=result' frameborder='no' allowtransparency='true' allowfullscreen='true' style='width: 100%;margin-top:20px;'>See the Pen <a href='http://codepen.io/_ericmiller/pen/PqxoJJ/'>US Phone Number</a> by Eric (<a href='http://codepen.io/_ericmiller'>@_ericmiller</a>) on <a href='http://codepen.io'>CodePen</a>.
+</iframe>
+
+
+<p>If you see any that could be done better or be a bit more lenient please let me know!</p>
+
+			</div>
+		</article>
+		<div id="disqus_thread" class="col-1-1 comments"></div>
+	</div>
+	<script>
+		var disqus_shortname = 'eastohco'; // required: replace example with your forum shortname
+
+		(function() {
+			var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+			dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+			(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+		})();    
+	</script>
+
+    </div>
+
+    <script type="text/javascript">        
+        (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+        (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+        m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+        })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+        ga('create', 'UA-65665101-1', 'auto');
+        ga('send', 'pageview');
+    </script>
+</body>
