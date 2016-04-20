@@ -9,6 +9,8 @@
 	color: #f1f1f1;
 	transition: all 0.4s;
 	font-family: 'Montserrat', sans-serif;
+	border: none;
+	cursor: pointer;
 
 	&:hover{
 		background: $mainColor;
