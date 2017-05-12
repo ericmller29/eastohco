@@ -1,0 +1,3 @@
+[submodule "themes/juice"]
+	path = themes/juice
+	url = https://github.com/ericmller29/juice-theme.git
